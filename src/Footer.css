@@ -1,0 +1,23 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #f8f2d6;
+    padding: 20px;
+    text-align: center;
+    z-index: 100;
+  }
+  
+  .footer a {
+    margin: 0 20px;
+    color: #555; /* Same as job location color */
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .footer a:hover {
+    color: #6f6a56;
+    transform: scale(1.05);
+  }
+  
+  

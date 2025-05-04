@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from "./Header";
+import Footer from "./Footer";
+import DailyWageJobs from "./pages/DailyWageJobs";
+import AgriculturalWork from "./pages/AgriculturalWork";
+import HandicraftIndustries from "./pages/HandicraftIndustries";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div style={{ paddingBottom: "80px" }}> {/* Extra space to avoid content overlap */}
+        <Header />
+        <Routes>
+          <Route path="/" element={<DailyWageJobs />} />
+          <Route path="/agriculture" element={<AgriculturalWork />} />
+          <Route path="/handicrafts" element={<HandicraftIndustries />} />
+        </Routes>
+      </div>
+      <Footer /> {/* ✅ Footer placed outside of Routes, so it's always visible */}
+    </Router>
   );
 }
 
